@@ -2,9 +2,9 @@
 require File.expand_path('../lib/compass-blueprint/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Scott Davis", "Stephen Way"]
+  gem.authors       = ["Scott Davis", "Stephen Way", "Brigitte Jellinek"]
   gem.email         = ["jetviper21@gmail.com"]
-  gem.description   = %q{Compass extension for blueprint css framework}
+  gem.description   = %q{Compass extension for blueprint css framework, adapted to be a bit responsive}
   gem.summary       = %q{Blueprint for compass}
   gem.homepage      = "http://compass-blueprint.org/"
 

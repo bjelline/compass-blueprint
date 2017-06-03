@@ -54,15 +54,15 @@ $blueprint-container-size: $blueprint-grid-outer-width * $blueprint-grid-columns
   @for $n from 1 to $blueprint-grid-columns {
     .span-#{$n} {
       @extend .column;
-      width: span($n); } }
+      max-width: span($n); } }
   .span-#{$blueprint-grid-columns} {
     @extend .column;
-    width: span($blueprint-grid-columns);
+    max-width: span($blueprint-grid-columns);
     margin: 0; }
   input, textarea, select {
     @for $n from 1 through $blueprint-grid-columns {
       &.span-#{$n} {
-        width: span($n); } } }
+        max-width: span($n); } } }
   // Add these to a column to append empty cols.
   @for $n from 1 to $blueprint-grid-columns {
     .append-#{$n} {
@@ -94,7 +94,7 @@ $blueprint-container-size: $blueprint-grid-outer-width * $blueprint-grid-columns
 // If you use this mixin without the class and want to support ie6
 // you must set text-align left on your container element in an IE stylesheet.
 @mixin container {
-  width: $blueprint-container-size;
+  max-width: $blueprint-container-size;
   margin: 0 auto;
   @include clearfix; }
 
@@ -106,7 +106,7 @@ $blueprint-container-size: $blueprint-grid-outer-width * $blueprint-grid-columns
 // Use this mixins to set the width of n columns.
 @mixin column($n, $last: false) {
   @include column-base($last);
-  width: span($n); }
+  max-width: span($n); }
 
 // Return the width in pixels of `$n` columns.
 @function span($n) {
@@ -122,9 +122,9 @@ $blueprint-container-size: $blueprint-grid-outer-width * $blueprint-grid-columns
 @mixin span($n, $important: false) {
   @warn "The span mixin is deprecated. Please use the span function instead. E.g. width: span(#{$n})";
   @if $important {
-    width: span($n) !important; }
+    max-width: span($n) !important; }
   @else {
-    width: span($n); } }
+    max-width: span($n); } }
 
 // The basic set of styles needed to make an element
 // behave like a column:
